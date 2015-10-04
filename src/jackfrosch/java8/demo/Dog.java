@@ -37,8 +37,8 @@ public class Dog implements Comparable<Dog> {
             System.out.println(dog);
         }
 
-        List<Dog> dawgs = Arrays.asList(dogs);
-        Collections.sort(dawgs);
+        List<Dog> dawgs = Arrays.asList(dogs);  // Varargs came along in 1.5
+        Collections.sort(dawgs);                // Collections as of 1.5
         System.out.println("\nSorted:");
         for(Dog dog: dawgs) {
             System.out.println(dog);
