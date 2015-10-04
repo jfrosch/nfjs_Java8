@@ -1,4 +1,4 @@
-package jackfrosch.java8.demo;
+package jackfrosch.java8.demo.classic;
 
 import java.util.Arrays;
 import java.util.Collections;

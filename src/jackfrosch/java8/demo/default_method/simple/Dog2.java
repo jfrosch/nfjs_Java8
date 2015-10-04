@@ -1,10 +1,9 @@
-package jackfrosch.java8.demo;
+package jackfrosch.java8.demo.default_method.simple;
 
 import java.time.LocalDate;
 import java.time.Month;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
-import java.time.temporal.TemporalUnit;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;

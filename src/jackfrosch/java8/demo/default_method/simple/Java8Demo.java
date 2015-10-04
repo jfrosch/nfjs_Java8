@@ -1,4 +1,4 @@
-package jackfrosch.java8.demo;
+package jackfrosch.java8.demo.default_method.simple;
 
 public class Java8Demo {
 
