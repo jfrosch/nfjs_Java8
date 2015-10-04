@@ -28,7 +28,10 @@ public class Dog implements Comparable<Dog> {
     }
 
     public static void main(String[] args) {
-        Dog[] dogs = { new Dog("Fido", "Smith"), new Dog("Fluffy", "Jones"), new Dog("Fido", "Jones") };
+        Dog[] dogs = { new Dog("Fido", "Smith"),
+                       new Dog("Fluffy", "Jones"),
+                       new Dog("Fido", "Jones") };
+
         System.out.println("Unsorted:");
         for(Dog dog: dogs) {
             System.out.println(dog);
