@@ -54,7 +54,8 @@ public class Dog2 implements CustomComparable<Dog2> {
 
     public static void main(String[] args) {
         Dog2 fido_smith = new Dog2("Fido", "Smith", LocalDate.now());
-        Dog2 fido_smith2 = new Dog2("Fido", "Smith", LocalDate.now().minus(3, ChronoUnit.WEEKS));
+        Dog2 fido_smith2 = new Dog2("Fido", "Smith", LocalDate.now()
+                                                              .minus(3, ChronoUnit.WEEKS));
         Dog2 fluffy_jones = new Dog2("Fluffy", "Jones", LocalDate.of(2015, Month.JULY, 1));
         Dog2 fido_jones = new Dog2("Fido", "Jones", LocalDate.parse("2015-02-28"));
 
@@ -65,17 +66,21 @@ public class Dog2 implements CustomComparable<Dog2> {
             System.out.println(dog);
         }
 
-        List<Dog2> dawgs = Arrays.asList(dogs);  // Varargs came along in 1.5
-        Collections.sort(dawgs);                // Collections as of 1.5
+        List<Dog2> dawgs = Arrays.asList(dogs);
+        Collections.sort(dawgs);
         System.out.println("\nSorted:");
         for(Dog2 dog: dawgs) {
             System.out.println(dog);
         }
 
         System.out.println("\nComparatively Equal");
-        System.out.println("Are Fido Jones and Fido Smith equal? " + fido_jones.equals(fido_smith));
-        System.out.println("Are Fido Jones and Fido Smith comparatively equal? " + fido_jones.isComparativelyEqual(fido_smith));
-        System.out.println("Are Fido Smith and Fido Smith #2 equal? " + fido_smith.equals(fido_smith2));
-        System.out.println("Are Fido Smith and Fido Smith #2 comparatively equal? " + fido_smith.isComparativelyEqual(fido_smith2));
+        System.out.println("Are Fido Jones & Fido Smith equal? "
+                                + fido_jones.equals(fido_smith));
+        System.out.println("Are Fido Jones & Fido Smith comparatively equal? "
+                                + fido_jones.isComparativelyEqual(fido_smith));
+        System.out.println("Are Fido Smith & Fido Smith #2 equal? "
+                                + fido_smith.equals(fido_smith2));
+        System.out.println("Are Fido Smith & Fido Smith #2 comparatively equal? "
+                                + fido_smith.isComparativelyEqual(fido_smith2));
     }
 }
