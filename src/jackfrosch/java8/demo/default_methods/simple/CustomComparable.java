@@ -1,4 +1,4 @@
-package jackfrosch.java8.demo.default_method.simple;
+package jackfrosch.java8.demo.default_methods.simple;
 
 public interface CustomComparable<T> extends Comparable<T> {
 

@@ -1,4 +1,4 @@
-package jackfrosch.java8.demo.default_method.simple;
+package jackfrosch.java8.demo.default_methods.simple;
 
 import java.time.LocalDate;
 import java.time.Month;

@@ -1,4 +1,4 @@
-package jackfrosch.java8.demo.default_method.resolution;
+package jackfrosch.java8.demo.default_methods.resolution;
 
 public class Greeter implements AmericanEnglish, French, German {
 
