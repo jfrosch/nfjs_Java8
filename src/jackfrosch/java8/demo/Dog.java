@@ -6,8 +6,8 @@ import java.util.List;
 
 // starting in 1.5 interfaces could be declared with generics
 public class Dog implements Comparable<Dog> {
-    String ownerLastName;
-    String name;
+    final String ownerLastName;
+    final String name;
 
     public Dog(String name, String ownerLastName) {
         this.name = name;
