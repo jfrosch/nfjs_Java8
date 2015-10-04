@@ -36,7 +36,7 @@ public class Dog2 implements CustomComparable<Dog2> {
         return result;
     }
 
-    // Let's include lastVaccinationDate in equals
+    // Let's include lastVaccination date in equals
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
