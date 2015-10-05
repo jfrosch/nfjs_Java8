@@ -6,7 +6,17 @@ import java.time.LocalDate;
 public class OrderFactory {
     static Order createOrder() {
         Order order = new Order("Order 1", LocalDate.now(), new BigDecimal("0.05"));
+        addLineItems(order);
+        return order;
+    }
 
+    static Order2 createOrder2() {
+        Order2 order = new Order2("Order 2", LocalDate.now(), new BigDecimal("0.05"));
+        addLineItems(order);
+        return order;
+    }
+
+    static void addLineItems(Order order) {
         order.addLineItem(new LineItem(order, "Radio", 1, new BigDecimal("100.00"), true));
         order.addLineItem(new LineItem(order, "Book", 2, new BigDecimal("15.00"), true));
         order.addLineItem(new LineItem(order, "DVD", 1, new BigDecimal("10.00"), true));
@@ -17,6 +27,5 @@ public class OrderFactory {
         order.addLineItem(new LineItem(order, "Soup", 10, new BigDecimal("1.00"), false));
         order.addLineItem(new LineItem(order, "Bread", 2, new BigDecimal("3.00"), false));
         order.addLineItem(new LineItem(order, "Eggs", 2, new BigDecimal("2.50"), false));
-        return order;
     }
 }

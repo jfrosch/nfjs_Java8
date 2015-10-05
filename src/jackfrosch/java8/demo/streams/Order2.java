@@ -2,6 +2,7 @@ package jackfrosch.java8.demo.streams;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.stream.Stream;
 
 public class Order2 extends Order {
     Order2(String orderId, LocalDate orderDate, BigDecimal taxRate) {
@@ -10,21 +11,19 @@ public class Order2 extends Order {
 
     @Override
     public BigDecimal calculateTaxableTotal() {
-        return super.calculateTaxableTotal();
-    }
-
-    @Override
-    public BigDecimal calculateTax() {
-        return super.calculateTax();
+        return getStream().filter(LineItem::isTaxable)
+                          .map(LineItem::calculateTotal)
+                          .reduce(BigDecimal.ZERO, BigDecimal::add);
     }
 
     @Override
     public BigDecimal calculateNontaxableTotal() {
-        return super.calculateNontaxableTotal();
+        return getStream().filter(item -> !item.isTaxable())
+                          .map(LineItem::calculateTotal)
+                          .reduce(BigDecimal.ZERO, BigDecimal::add);
     }
 
-    @Override
-    public BigDecimal calculateTotal() {
-        return super.calculateTotal();
+    private Stream<LineItem> getStream() {
+        return lineItems.stream();
     }
 }

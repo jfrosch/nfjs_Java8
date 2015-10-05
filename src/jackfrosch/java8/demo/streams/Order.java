@@ -6,11 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 class Order {
-    private String orderId;
-    private LocalDate orderDate;
-    private BigDecimal taxRate;
+    String orderId;
+    LocalDate orderDate;
+    BigDecimal taxRate;
 
-    private final List<LineItem> lineItems;
+    final List<LineItem> lineItems;
 
     Order(String orderId, LocalDate orderDate, BigDecimal taxRate) {
         this.orderId = orderId;
@@ -31,10 +31,6 @@ class Order {
         return taxableTotal;
     }
 
-    BigDecimal calculateTax() {
-        return calculateTaxableTotal().multiply(taxRate).setScale(2, BigDecimal.ROUND_HALF_EVEN);
-    }
-
     BigDecimal calculateNontaxableTotal() {
         BigDecimal nontaxableTotal = BigDecimal.ZERO;
 
@@ -46,12 +42,13 @@ class Order {
         return nontaxableTotal;
     }
 
+    BigDecimal calculateTax() {
+        return calculateTaxableTotal().multiply(taxRate).setScale(2, BigDecimal.ROUND_HALF_EVEN);
+    }
+
     BigDecimal calculateTotal() {
         return calculateNontaxableTotal().add(calculateTaxableTotal().add(calculateTax()));
     }
 
     void addLineItem(LineItem item) { lineItems.add(item); }
-    List<LineItem> getLineItems() { return lineItems; }
-    LocalDate getOrderDate() { return orderDate; }
-    String getOrderId() { return orderId; }
 }

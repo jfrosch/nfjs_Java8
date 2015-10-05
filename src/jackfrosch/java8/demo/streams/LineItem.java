@@ -4,11 +4,13 @@ import java.math.BigDecimal;
 import java.util.Objects;
 
 class LineItem {
-    private Order order;
-    private String product;
-    private int quantity;
-    private BigDecimal salePrice;
-    private boolean taxable;
+    static long TIME_TO_CALCULATE_TOTAL = 50;
+
+    private final Order order;
+    private final String product;
+    private final int quantity;
+    private final BigDecimal salePrice;
+    private final boolean taxable;
 
     LineItem(Order order, String product, int quantity,
                     BigDecimal salePrice, boolean taxable) {
@@ -20,6 +22,7 @@ class LineItem {
     }
 
     BigDecimal calculateTotal() {
+        sleepAwhile();
         return salePrice.multiply(new BigDecimal(quantity));
     }
 
@@ -37,17 +40,15 @@ class LineItem {
         return Objects.hash(order, product);
     }
 
-    Order getOrder() { return order; }
-    String getProduct() { return product; }
-    int getQuantity() { return quantity; }
-    BigDecimal getSalePrice() { return salePrice; }
     boolean isTaxable() { return taxable;}
 
-    void setOrder(Order order) { this.order = order; }
-    void setProduct(String product) { this.product = product; }
-    void setQuantity(int quantity) { this.quantity = quantity; }
-    void setSalePrice(BigDecimal salePrice) { this.salePrice = salePrice; }
-    void setTaxable(boolean taxable) { this.taxable = taxable; }
+    private void sleepAwhile() {
+        try {
+            Thread.sleep(TIME_TO_CALCULATE_TOTAL);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 }
