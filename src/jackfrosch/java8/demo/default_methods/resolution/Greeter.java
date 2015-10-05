@@ -14,6 +14,7 @@ public class Greeter implements AmericanEnglish, French, German {
         greeter.greetInFrench();
         greeter.greetInGerman();
         greeter.greetInAmericanEnglish();
+        greeter.greetInEnglish();
 
     }
 
@@ -27,5 +28,9 @@ public class Greeter implements AmericanEnglish, French, German {
 
     private void greetInAmericanEnglish() {
         AmericanEnglish.super.greet();
+    }
+
+    private void greetInEnglish() {
+        AmericanEnglish.super.greetFormalEnglish();
     }
 }
