@@ -5,4 +5,9 @@ public interface AmericanEnglish extends English {
     default void greet() {
         System.out.println("Hi");
     }
+
+    // This is needed to unhide the English greeting
+    default void greetFormalEnglish() {
+        English.super.greet();
+    }
 }
