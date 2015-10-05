@@ -1,4 +1,4 @@
-package jackfrosch.java8.demo.ctor_ref;
+package jackfrosch.java8.demo.method_ref;
 
 import java.util.function.Supplier;
 
