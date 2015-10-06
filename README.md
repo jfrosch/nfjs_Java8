@@ -5,5 +5,5 @@ It's not production ready, but may be useful for some demos of Java 8 functional
 
 --
 Jack Frosch
-Twitter: @jackfrosch
+Twitter: @jackfrosch<br/>
 LinkedIn: linkedin.com/in/jackfrosch
