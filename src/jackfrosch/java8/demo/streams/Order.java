@@ -10,14 +10,12 @@ class Order {
     LocalDate orderDate;
     BigDecimal taxRate;
 
-    final List<LineItem> lineItems;
+    final List<LineItem> lineItems = new ArrayList<>();;
 
     Order(String orderId, LocalDate orderDate, BigDecimal taxRate) {
         this.orderId = orderId;
         this.orderDate = orderDate;
         this.taxRate = taxRate;
-
-        lineItems = new ArrayList<>();
     }
 
     BigDecimal calculateTaxableTotal() {

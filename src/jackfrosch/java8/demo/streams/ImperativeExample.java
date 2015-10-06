@@ -1,7 +1,5 @@
 package jackfrosch.java8.demo.streams;
 
-import java.math.BigDecimal;
-
 public class ImperativeExample {
 
     public static void main(String[] args) {

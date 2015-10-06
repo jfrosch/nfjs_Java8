@@ -26,6 +26,8 @@ class LineItem {
         return salePrice.multiply(new BigDecimal(quantity));
     }
 
+    boolean isTaxable() { return taxable; }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -39,8 +41,6 @@ class LineItem {
     public int hashCode() {
         return Objects.hash(order, product);
     }
-
-    boolean isTaxable() { return taxable;}
 
     private void sleepAwhile() {
         try {
