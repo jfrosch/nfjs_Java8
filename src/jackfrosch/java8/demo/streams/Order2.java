@@ -24,6 +24,6 @@ public class Order2 extends Order {
     }
 
     private Stream<LineItem> getStream() {
-        return lineItems.stream();
+        return lineItems.stream(); // call parallelStream() to run concurrently
     }
 }
