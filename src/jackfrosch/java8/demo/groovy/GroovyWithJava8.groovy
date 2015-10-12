@@ -1,3 +1,6 @@
+// tested with Groovy 2.4.5
+package jackfrosch.java8.demo.groovy
+
 import java.util.function.Predicate
 import java.util.stream.Collectors
 
