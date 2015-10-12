@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
 
-public class ImperativeNumberPicker {
+public class FunctionalVsImperativeNumberPicker {
 
     static Predicate<Integer> evenPicker = new Predicate<Integer>() {
         @Override
@@ -37,7 +37,7 @@ public class ImperativeNumberPicker {
     public static void main(String[] args) {
         List<Integer> values = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
-        ImperativeNumberPicker picker = new ImperativeNumberPicker();
+        FunctionalVsImperativeNumberPicker picker = new FunctionalVsImperativeNumberPicker();
 
         List<Integer> oddNumbers = picker.pickSome(values, oddPicker);
         List<Integer> evenNumbers = picker.pickSome(values, evenPicker);
