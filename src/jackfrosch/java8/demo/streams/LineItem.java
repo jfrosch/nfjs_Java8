@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.Objects;
 
 class LineItem {
-    static long TIME_TO_CALCULATE_TOTAL = 50;
+    static long TIME_TO_CALCULATE_TOTAL = 50; // increase to 500 to slow it down to ~14 secs
 
     private final Order order;
     private final String product;
