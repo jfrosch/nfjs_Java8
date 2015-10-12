@@ -18,11 +18,11 @@ public class LazyEvalExample {
     }
 
     public static void main(String[] args) {
-        inTheZone = new Random().nextInt(50);
+        inTheZone = new Random().nextInt(100);
 
         System.out.println("The inTheZone value: " + inTheZone);
 
-        Stream<Integer> values = IntStream.rangeClosed(1, 1000).boxed();
+        Stream<Integer> values = IntStream.rangeClosed(1, 100).boxed();
         Stream<Integer> partiallyProcessed = values.filter(LazyEvalExample::filter)
                                                     .map(LazyEvalExample::map);
 
