@@ -13,8 +13,11 @@ public class LazyEvalExample {
     }
 
     static boolean filter(final Integer val) {
-        System.out.println("Filtering " + val + "...");
-        return val >= inTheZone - 5 && val % 7 == 0;
+        System.out.print("Filtering " + val + "... ");
+        boolean filtered = val >= inTheZone - 5 && val % 5 == 0;
+        System.out.println(filtered ? "Included" : "Skipped");
+
+        return filtered;
     }
 
     public static void main(String[] args) {
