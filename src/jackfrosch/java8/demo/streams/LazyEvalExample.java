@@ -5,14 +5,14 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class LazyEvalExample {
-    static int inTheZone;
+    private static int inTheZone;
 
     static Integer map(final Integer val) {
         System.out.println("Transforming " + val + "...");
         return val * val;
     }
 
-    static boolean filter(final Integer val) {
+    private static boolean filter(final Integer val) {
         System.out.print("Filtering " + val + "... ");
         boolean filtered = val >= inTheZone - 5 && val % 5 == 0;
         System.out.println(filtered ? "Included" : "Skipped");
