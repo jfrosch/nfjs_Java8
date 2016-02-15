@@ -16,8 +16,8 @@ public class CtorReferenceDemo {
     }
 
     public static void main(String[] args) {
-        for(int i = 1; i <= 10; i++) {
-            Foo foo = Foo.create(Foo::new);
+        for(int i = 0; i < 10; i++) {
+            Foo foo = Foo.create(Foo::new); // Foo:new returns Supplier<Foo>
             System.out.println(foo.instanceCount);
         }
     }
