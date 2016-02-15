@@ -30,7 +30,7 @@ public class LazyEvalExample2 {
         return filtered;
     }
 
-    static Integer terminate(Stream<Integer> values) {
+    private static Integer terminate(Stream<Integer> values) {
 //        return values.reduce(0, (Integer a, Integer b) -> a + b);
         return values.findFirst().get();
     }
@@ -41,9 +41,9 @@ public class LazyEvalExample2 {
         System.out.println("The inTheZone value: " + inTheZone);
 
         Stream<Integer> values = IntStream.rangeClosed(1, 100).boxed();
-        Stream<Integer> lazilyProcessed = values.filter(LazyEvalExample::filter1)
-                                                .filter(LazyEvalExample::filter2)
-                                                .map(LazyEvalExample::map);
+        Stream<Integer> lazilyProcessed = values.filter(LazyEvalExample2::filter1)
+                                                .filter(LazyEvalExample2::filter2)
+                                                .map(LazyEvalExample2::map);
 
         System.out.println("We've prepared to filter and map transform the values...");
         System.out.println("... now find and transform upon executing the terminal method");
