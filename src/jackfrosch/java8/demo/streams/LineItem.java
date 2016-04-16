@@ -22,7 +22,7 @@ class LineItem {
     }
 
     BigDecimal calculateTotal() {
-        sleepAwhile();
+        sleepAwhile();    // sleep for TIME_TO_CALCULATE_TOTAL ms
         return salePrice.multiply(new BigDecimal(quantity));
     }
 
