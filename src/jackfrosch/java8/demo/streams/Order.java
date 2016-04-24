@@ -10,7 +10,7 @@ class Order {
     LocalDate orderDate;
     BigDecimal taxRate;
 
-    final List<LineItem> lineItems = new ArrayList<>();;
+    final List<LineItem> lineItems = new ArrayList<>();
 
     Order(String orderId, LocalDate orderDate, BigDecimal taxRate) {
         this.orderId = orderId;
